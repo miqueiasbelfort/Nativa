@@ -1,0 +1,39 @@
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 50px;
+}
+.cards_container{
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.card {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 10px;
+    background-color: transparent;
+    border-radius: 10px;
+    box-shadow: 3px 3px 6px 0px #13122d;
+    transition: all ease .3s;
+}
+.card p {
+    font-size: 20px;
+}
+.card:hover {
+    background-color: #23223d;
+}
+@media screen and (max-width: 768px) {
+    .container {
+        text-align: center;
+    }
+    .cards_container {
+        justify-content: center;
+    }
+}
