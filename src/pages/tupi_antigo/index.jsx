@@ -8,6 +8,7 @@ const Tupi_antigo = () => {
     <div className="container">
       <h1>TUPI ANTIGO</h1>
       <div>
+
         <div className='simple_container all_line'>
           <h2>Introdução</h2>
           <Circle
@@ -32,8 +33,8 @@ const Tupi_antigo = () => {
               icon={<GiSnakeEgg/>}
             />
           </div>
-
         </div>
+
       </div>
     </div>
   )
