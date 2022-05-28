@@ -25,6 +25,10 @@ input, button {
     color: #fff;
     font-weight: 700;
     font-size: 19px;
+    transition: all ease .3s;
+}
+.btn:hover {
+    background-color: #0f40e3;
 }
 
 /*PAGES*/
@@ -48,6 +52,45 @@ input, button {
     align-items: center;
     justify-self: center;
     gap: 50px;
+}
+.cards {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.card {
+    font-size: 20px;
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    background-color: #1b1a45;
+    box-shadow: 3px 3px 6px 0px #15144b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #fff;
+    border: none;
+}
+.card p {
+    transition: all ease-in .3s;
+}
+.card:hover p {
+    font-size: 25px;
+}
+
+/*LOGIC*/
+.clicked {
+    border: 2px solid #3968FF;
+}
+.right{
+    background-color: #00d100;
+}
+.wrong {
+    background-color: #ff0000;
 }
 
 :root {

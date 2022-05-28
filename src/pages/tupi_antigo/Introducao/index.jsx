@@ -6,6 +6,31 @@ import {tupi_atg} from "../../../data/tupi_antigo"
 
 const Introducao = () => {
     const [count, setCount] = useState(1)
+    const [arrayOptions, setArrayOptions] = useState([])
+    const [right_wrong, setRight_wrong] = useState(false)
+
+    const [clicked, setCLicked] = useState("")
+    const [color, setColor] = useState("")
+    
+
+    const handleClick = (option, elemente, stage) => {
+        setArrayOptions(option)
+
+        elemente.classList.add("clicked")
+
+        if(option == stage.res){
+            setRight_wrong(true)
+        } 
+
+    }
+
+    const handleNext = (element) => {
+
+        setCount(count + 1)
+    
+    }
+
+    //console.log(arrayOptions)
 
   return (
     <div className={styles.container}>
@@ -15,28 +40,29 @@ const Introducao = () => {
                     { 
                         stage.optionId == count && stage.type == "int" && 
 
-                        <div className={styles.question_container}>
-                            
-                            <h1>{stage.ask}</h1>
-                            <p>{stage.tip}</p>
+                       <>
+                         <div className={styles.question_container}>
 
-                            <div className={styles.cards}>
+                                <h1>{stage.ask}</h1>
+                                <p>{stage.tip}</p>
 
-                                {stage.options.map((option, index) => (
-                                    <div className={styles.card} key={index}>
-                                        {option}
-                                    </div>
-                                ))}
+                                <div className="cards">
 
+                                    {stage.options.map((option, index) => (
+                                        <button onClick={(e) => handleClick(option, e.target, stage)} className="card" key={index}>
+                                            <p>{option}</p>
+                                        </button>
+                                    ))}
+
+                                </div>
+
+                                <button className="btn" onClick={(e) => handleNext(e)}>Continuar</button>
                             </div>
-
-                        </div>
-
+                       </>
                     }
                 </div>
             ))
         }
-        <button className="btn" onClick={() => setCount(count + 1)}>Continuar</button>
     </div>
   )
 }
