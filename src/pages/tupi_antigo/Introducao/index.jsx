@@ -9,8 +9,8 @@ const Introducao = () => {
     const [arrayOptions, setArrayOptions] = useState([])
     const [right_wrong, setRight_wrong] = useState(false)
 
-    const [clicked, setCLicked] = useState("")
-    const [color, setColor] = useState("")
+    const [right, setRight] = useState("")
+    const [wrong, setWrong] = useState("")
     
 
     const handleClick = (option, elemente, stage) => {
@@ -24,10 +24,25 @@ const Introducao = () => {
 
     }
 
-    const handleNext = (element) => {
+    const handleAssess = (element) => {
 
+        if(right_wrong){
+            setRight("active")
+            element.classList.add("right")
+
+        } else {
+            setWrong("active")
+            element.classList.add("wrong")
+        }
+        
+        console.log(element)
+    }
+
+    const handleNext = () => {
         setCount(count + 1)
-    
+        setRight_wrong(false)
+        setRight("")
+        setWrong("")
     }
 
     //console.log(arrayOptions)
@@ -56,13 +71,28 @@ const Introducao = () => {
 
                                 </div>
 
-                                <button className="btn" onClick={(e) => handleNext(e)}>Continuar</button>
+                                <button className="btn" onClick={e => handleAssess(e.target)}>Avaliar</button>
                             </div>
                        </>
                     }
                 </div>
             ))
         }
+
+        <div className={`view_right ${right}`}>
+            <div className="right_alert">
+                <h3>Parabéns!</h3>
+                <button className="btn" onClick={(e) => handleNext(e)}>Continuar</button>
+            </div>
+        </div>
+
+        <div className={`view_wrong ${wrong}`}>
+            <div className="wrong_alert">
+                <h3>Não foi dessa vez!</h3>
+                <button className="btn" onClick={(e) => handleNext(e)}>Continuar</button>
+            </div>
+        </div>
+        
     </div>
   )
 }
