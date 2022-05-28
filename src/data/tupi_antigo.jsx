@@ -4,11 +4,11 @@ export const tupi_atg = [
         type: "int",
         res: "Eu",
         ask: "Ixé",
-        tip: 'Amanhã "IXÉ" vou para casa!',
+        tip: 'Primeira pessoa do singular:',
         options: [
             "Eu",
             "Casa",
-            "Vivo",
+            "Tu",
             "Lua"
         ]
     },
@@ -17,12 +17,25 @@ export const tupi_atg = [
         type: "int",
         res: "Comer",
         ask: "Karu",
-        tip: 'Estou com muita fome, quero "KARU"!',
+        tip: 'Não podemos ficar sem!',
         options: [
             "Morrer",
             "Correr",
             "Nadar",
             "Comer"
         ]
-    }
+    },
+    {
+        optionId: 3,
+        type: "int",
+        res: "Você",
+        ask: "Indé",
+        tip: 'Segunda pessoa do singular',
+        options: [
+            "Eles",
+            "Rio",
+            "Você",
+            "Amar"
+        ]
+    },
 ]

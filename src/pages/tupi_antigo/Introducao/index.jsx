@@ -35,7 +35,7 @@ const Introducao = () => {
             element.classList.add("wrong")
         }
         
-        console.log(element)
+        //console.log(element)
     }
 
     const handleNext = () => {
@@ -92,7 +92,7 @@ const Introducao = () => {
                 <button className="btn" onClick={(e) => handleNext(e)}>Continuar</button>
             </div>
         </div>
-        
+
     </div>
   )
 }
