@@ -3,6 +3,7 @@ import { useState } from "react"
 import styles from "./Introducao.module.css"
 //db
 import {tupi_atg} from "../../../data/tupi_antigo"
+import Alert from "../../../components/Alert"
 
 const Introducao = () => {
     const [count, setCount] = useState(1)
@@ -65,7 +66,7 @@ const Introducao = () => {
 
                                     {stage.options.map((option, index) => (
                                         <button onClick={(e) => handleClick(option, e.target, stage)} className="card" key={index}>
-                                            <p>{option}</p>
+                                            {option}
                                         </button>
                                     ))}
 
@@ -79,19 +80,12 @@ const Introducao = () => {
             ))
         }
 
-        <div className={`view_right ${right}`}>
-            <div className="right_alert">
-                <h3>Parabéns!</h3>
-                <button className="btn" onClick={(e) => handleNext(e)}>Continuar</button>
-            </div>
-        </div>
-
-        <div className={`view_wrong ${wrong}`}>
-            <div className="wrong_alert">
-                <h3>Não foi dessa vez!</h3>
-                <button className="btn" onClick={(e) => handleNext(e)}>Continuar</button>
-            </div>
-        </div>
+        <Alert 
+            next={handleNext}
+            type_alert={right_wrong ? "right_alert" : "wrong_alert"}
+            text={right_wrong ? "Parabens!" : "Não foi dessa vez!"}
+            active={right || wrong}
+        />
 
     </div>
   )
