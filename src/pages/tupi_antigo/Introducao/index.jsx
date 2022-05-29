@@ -7,35 +7,26 @@ import Alert from "../../../components/Alert"
 
 const Introducao = () => {
     const [count, setCount] = useState(1)
-    const [arrayOptions, setArrayOptions] = useState([])
     const [right_wrong, setRight_wrong] = useState(false)
-
     const [right, setRight] = useState("")
-    const [wrong, setWrong] = useState("")
     
 
     const handleClick = (option, elemente, stage) => {
-        setArrayOptions(option)
-
         elemente.classList.add("clicked")
-
         if(option == stage.res){
             setRight_wrong(true)
-        } 
-
+        } else {
+            setRight_wrong(false)
+        }
     }
 
     const handleAssess = (element) => {
-
         if(right_wrong){
-            setRight("active")
             element.classList.add("right")
-
         } else {
-            setWrong("active")
             element.classList.add("wrong")
         }
-        
+        setRight("active")
         //console.log(element)
     }
 
@@ -45,8 +36,6 @@ const Introducao = () => {
         setRight("")
         setWrong("")
     }
-
-    //console.log(arrayOptions)
 
   return (
     <div className={styles.container}>
@@ -76,6 +65,22 @@ const Introducao = () => {
                             </div>
                        </>
                     }
+                    {
+                        stage.optionId == count && stage.type == "exp" && stage.form == "table" && 
+                        <div className="container_table">
+                            <h1>{stage.text}</h1>
+                            <div className="table">
+                                <div className="table_colum">
+                                    {stage.colum_01.map(text => (<h3>{text}</h3>))}
+                                </div>
+                                <div className="table_colum">
+                                    {stage.colum_02.map(text => (<h3>{text}</h3>))}
+                                </div>
+                            </div>
+                            <p className={styles.desc}>{stage.desc}</p>
+                            <button className="btn" onClick={handleNext}>Continuar</button>
+                        </div>
+                    }
                 </div>
             ))
         }
@@ -84,7 +89,7 @@ const Introducao = () => {
             next={handleNext}
             type_alert={right_wrong ? "right_alert" : "wrong_alert"}
             text={right_wrong ? "Parabens!" : "Não foi dessa vez!"}
-            active={right || wrong}
+            active={right}
         />
 
     </div>

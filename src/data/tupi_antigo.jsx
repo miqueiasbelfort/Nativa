@@ -29,7 +29,7 @@ export const tupi_atg = [
         optionId: 3,
         type: "int",
         res: "Você",
-        ask: "Indé",
+        ask: "Endé",
         tip: 'Segunda pessoa do singular',
         options: [
             "Eles",
@@ -38,4 +38,17 @@ export const tupi_atg = [
             "Amar"
         ]
     },
+    {
+        optionId: 4,
+        type: "exp",
+        form: "table",
+        text: "Pronomes pessoas em tupi antigo:",
+        colum_01: ["Ixé", "Endé", "A'e", "oré", "Îande", "Peê"],
+        colum_02: ["Eu", "Tu", "Ele", "Nós", "NóS", "Vos"],
+        desc: `
+            Os pronomes "oré" e "endé", representam "nós".
+            O endé é inclusivo, ou seja inclui quem está ouvindo.
+            O oré é exclusivo, ou seja não representa quem está ouvindo. 
+        `
+    }
 ]
