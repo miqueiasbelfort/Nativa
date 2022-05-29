@@ -10,6 +10,8 @@ const Introducao = () => {
     const [right_wrong, setRight_wrong] = useState(false)
     const [right, setRight] = useState("")
     
+    const [txtChoice, setTxtChoice] = useState([])
+    const [stage, setStage] = useState("")
 
     const handleClick = (option, elemente, stage) => {
         elemente.classList.add("clicked")
@@ -20,21 +22,34 @@ const Introducao = () => {
         }
     }
 
-    const handleAssess = (element) => {
+    const handleAssess = (element, res) => {
         if(right_wrong){
             element.classList.add("right")
         } else {
             element.classList.add("wrong")
         }
         setRight("active")
-        //console.log(element)
+    }
+
+    const handleAssessText = (element, stage) => {
+
+        if(txtChoice.join(" ") == stage.res){
+            element.classList.add("right")
+            setRight_wrong(true)
+        } else {
+            element.classList.add("wrong")
+        }
+        setRight("active")
+    }
+
+    const handleOptionClick = (option) => {
+        setTxtChoice(txtChoice => [...txtChoice, option])
     }
 
     const handleNext = () => {
         setCount(count + 1)
         setRight_wrong(false)
         setRight("")
-        setWrong("")
     }
 
   return (
@@ -71,15 +86,36 @@ const Introducao = () => {
                             <h1>{stage.text}</h1>
                             <div className="table">
                                 <div className="table_colum">
-                                    {stage.colum_01.map(text => (<h3>{text}</h3>))}
+                                    {stage.colum_01.map((text, index) => (<h3 key={index}>{text}</h3>))}
                                 </div>
                                 <div className="table_colum">
-                                    {stage.colum_02.map(text => (<h3>{text}</h3>))}
+                                    {stage.colum_02.map((text, index) => (<h3  key={index}>{text}</h3>))}
                                 </div>
                             </div>
                             <p className={styles.desc}>{stage.desc}</p>
                             <button className="btn" onClick={handleNext}>Continuar</button>
                         </div>
+                    }
+                    {
+                         stage.optionId == count && stage.type == "text_form" &&
+                         <div className="text_form_container">
+                            <h1>Traduza pora o portugês:</h1>
+                            <h2>{stage.ask}</h2>
+                            <p className="text_btn">{txtChoice.join(" ")}</p>
+                            <div className="btns_container">
+                                {stage.options.map((option, index) => (
+                                    <button 
+                                        key={index}
+                                        className="btn_options"
+                                        onClick={() => handleOptionClick(option, stage.res)}
+                                    >
+                                        {option}
+                                    </button>
+                                ))}
+                            </div>
+                            <button className="btn" onClick={e => handleAssessText(e.target, stage)}>Avaliar</button>
+                            <button className="btn">Limpar</button>
+                         </div> 
                     }
                 </div>
             ))

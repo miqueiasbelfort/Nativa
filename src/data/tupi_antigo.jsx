@@ -8,7 +8,7 @@ export const tupi_atg = [
         options: [
             "Eu",
             "Casa",
-            "Tu",
+            "Eles",
             "Lua"
         ]
     },
@@ -50,5 +50,45 @@ export const tupi_atg = [
             O endé é inclusivo, ou seja inclui quem está ouvindo.
             O oré é exclusivo, ou seja não representa quem está ouvindo. 
         `
+    },
+    {
+        optionId: 5,
+        type: "int",
+        res: "Em",
+        ask: "Pe",
+        tip: 'Serve para juntar as palavras',
+        options: [
+            "Viver",
+            "Em",
+            "Canoa",
+            "Música"
+        ]
+    },
+    {
+        optionId: 6,
+        type: "int",
+        res: "Morar",
+        ask: "Ikó",
+        tip: 'Lugar onde vive!',
+        options: [
+            "Morar",
+            "Mulher",
+            "Lança",
+            "Português"
+        ]
+    },
+    {
+        optionId: 7,
+        type: "text_form",
+        res: "Eu moro em Brasíla",
+        ask: "Ixé aîko Brasília pe",
+        options: [
+            "durmo",
+            "moro",
+            "Eu",
+            "Brasília",
+            "para",
+            "em"
+        ]
     }
 ]
