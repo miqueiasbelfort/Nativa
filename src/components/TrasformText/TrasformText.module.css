@@ -36,3 +36,12 @@
     background-color: #15144b;
     box-shadow: none;
 }
+
+@media screen and (max-width: 768px){
+    .text_form_container {
+        padding: 0 10px;
+    }
+    .btn_options {
+        margin: 10px;
+    }
+}
