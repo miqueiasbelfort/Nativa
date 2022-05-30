@@ -80,7 +80,8 @@ export const tupi_atg = [
     {
         optionId: 7,
         type: "text_form",
-        res: "Eu moro em Brasíla",
+        to: "Português",
+        res: "Eu moro em Brasília",
         ask: "Ixé aîko Brasília pe",
         options: [
             "durmo",
