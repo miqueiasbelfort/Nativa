@@ -8,10 +8,10 @@ const Introduction = ({stage, handleAssess, handleClick}) => {
             <h1>{stage.ask}</h1>
             <p>{stage.tip}</p>
 
-            <div className="cards">
+            <div className={styles.cards}>
 
                 {stage.options.map((option, index) => (
-                    <button onClick={(e) => handleClick(option, e.target, stage)} className="card" key={index}>
+                    <button onClick={(e) => handleClick(option, e.target, stage)} className={styles.card} key={index}>
                         {option}
                     </button>
                 ))}

@@ -3,6 +3,8 @@ import { useState } from "react"
 import styles from "./Introducao.module.css"
 //db
 import {tupi_atg} from "../../../data/tupi_antigo"
+
+// components
 import Alert from "../../../components/Alert"
 import Introduction from "../../../components/Introduction"
 import Table from "../../../components/Table"

@@ -2,13 +2,13 @@ import styles from "./Table.module.css"
 
 const Table = ({stage, handleNext}) => {
   return (
-    <div className="container_table">
+    <div className={styles.container_table}>
         <h1>{stage.text}</h1>
-        <div className="table">
-            <div className="table_colum">
+        <div className={styles.table}>
+            <div className={styles.table_colum}>
                 {stage.colum_01.map((text, index) => (<h3 key={index}>{text}</h3>))}
             </div>
-            <div className="table_colum">
+            <div className={styles.table_colum}>
                 {stage.colum_02.map((text, index) => (<h3  key={index}>{text}</h3>))}
             </div>
         </div>
