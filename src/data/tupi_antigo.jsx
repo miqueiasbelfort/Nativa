@@ -69,7 +69,7 @@ export const tupi_atg = [
         type: "int",
         res: "Morar",
         ask: "Ikó",
-        tip: 'Lugar onde vive!',
+        tip: 'Eu quero ... em São Paulo!',
         options: [
             "Morar",
             "Mulher",
@@ -91,5 +91,41 @@ export const tupi_atg = [
             "para",
             "em"
         ]
+    },
+    {
+        optionId: 8,
+        type: "text_form",
+        to: "Português",
+        res: "Ele está comendo peixe",
+        ask: "A'e okaru pirá",
+        options: [
+            "Ele",
+            "peixe",
+            "está",
+            "morrendo",
+            "comendo",
+            "nadando"
+        ]
+    },
+    {
+        optionId: 9,
+        type: "text_form",
+        to: "Tupi Antigo",
+        res: "Ixé akaru pirá",
+        ask: "Eu estou comendo peixe",
+        options: [
+            "a'e",
+            "syk",
+            "pirá",
+            "Ixé",
+            "îande",
+            "akaru"
+        ]
+    },
+    {
+        optionId: 10,
+        type: "end",
+        text: "Você concluio a introdução:",
+        to: "/tupi_antigo"
     }
 ]

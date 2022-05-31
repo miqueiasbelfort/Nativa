@@ -7,6 +7,6 @@ export const languages = [
     {
         id: 2,
         name: "Nheengatu",
-        link: "/nheengatu"
+        link: "/"
     },
 ]

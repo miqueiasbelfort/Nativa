@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { Link } from "react-router-dom"
 
 import styles from "./Introducao.module.css"
 //db
@@ -58,6 +59,7 @@ const Introducao = () => {
         setCount(count + 1)
         setRight_wrong(false)
         setRight("")
+        setTxtChoice([])
     }
 
   return (
@@ -90,6 +92,14 @@ const Introducao = () => {
                             txtChoice={txtChoice}
                          />
                     }
+                    {
+                        stage.optionId == count && stage.type == "end" &&
+                        <div className={styles.end_container}>
+                            <h1>Parabéns...</h1>
+                            <h3>{stage.text}</h3>
+                            <Link to={stage.to} className="btn">Finalizar</Link>
+                        </div>
+                    }
                 </div>
             ))
         }
@@ -97,7 +107,7 @@ const Introducao = () => {
         <Alert 
             next={handleNext}
             type_alert={right_wrong ? "right_alert" : "wrong_alert"}
-            text={right_wrong ? "Parabens!" : "Não foi dessa vez!"}
+            text={right_wrong ? "Parabéns!" : "Não foi dessa vez!"}
             active={right}
         />
 
