@@ -30,7 +30,7 @@ export const tupi_atg = [
         type: "int",
         res: "Você",
         ask: "Endé",
-        tip: 'Segunda pessoa do singular',
+        tip: '... vai para a praia amanhã?',
         options: [
             "Eles",
             "Rio",
@@ -43,11 +43,11 @@ export const tupi_atg = [
         type: "exp",
         form: "table",
         text: "Pronomes pessoas em tupi antigo:",
-        colum_01: ["Ixé", "Endé", "A'e", "oré", "Îande", "Peê"],
-        colum_02: ["Eu", "Tu", "Ele", "Nós", "NóS", "Vos"],
+        colum_01: ["Ixé", "Endé", "A'e", "Oré", "Îande", "Peê"],
+        colum_02: ["Eu", "Tu", "Ele", "Nós", "Nós", "Vos"],
         desc: `
-            Os pronomes "oré" e "endé", representam "nós".
-            O endé é inclusivo, ou seja inclui quem está ouvindo.
+            Os pronomes "oré" e "îande", representam "nós".
+            O îande é inclusivo, ou seja inclui quem está ouvindo.
             O oré é exclusivo, ou seja não representa quem está ouvindo. 
         `
     },
@@ -56,7 +56,7 @@ export const tupi_atg = [
         type: "int",
         res: "Em",
         ask: "Pe",
-        tip: 'Serve para juntar as palavras',
+        tip: 'Serve para juntar as palavras!',
         options: [
             "Viver",
             "Em",
@@ -125,7 +125,7 @@ export const tupi_atg = [
     {
         optionId: 10,
         type: "end",
-        text: "Você concluio a introdução:",
+        text: "Você finalizou a introdução:",
         to: "/tupi_antigo"
     }
 ]

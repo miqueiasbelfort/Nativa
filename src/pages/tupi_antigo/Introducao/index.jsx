@@ -97,7 +97,7 @@ const Introducao = () => {
                         <div className={styles.end_container}>
                             <h1>Parabéns...</h1>
                             <h3>{stage.text}</h3>
-                            <Link to={stage.to} className="btn">Finalizar</Link>
+                            <Link to={stage.to} className="btn">Voltar</Link>
                         </div>
                     }
                 </div>
