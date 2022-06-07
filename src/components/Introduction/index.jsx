@@ -5,7 +5,7 @@ const Introduction = ({stage, handleAssess, handleClick}) => {
     <>
         <div className={styles.question_container}>
 
-            <h1>{stage.ask}</h1>
+            <h1 className={styles.title}>{stage.ask}</h1>
             <p>{stage.tip}</p>
 
             <div className={styles.cards}>

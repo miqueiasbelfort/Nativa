@@ -124,8 +124,34 @@ export const tupi_atg = [
     },
     {
         optionId: 10,
+        type: "int",
+        res: "Peixe",
+        ask: "Pirá",
+        tip: 'Fica nos rios e mares!',
+        options: [
+            "Mar",
+            "Ondas",
+            "Peixe",
+            "Lua"
+        ]
+    },
+    {
+        optionId: 11,
+        type: "int",
+        res: "Rio",
+        ask: "Y",
+        tip: 'Onde pescamos!',
+        options: [
+            "Rio",
+            "Flor",
+            "Montanha",
+            "Braco"
+        ]
+    },
+    {
+        optionId: 12,
         type: "end",
         text: "Você finalizou a introdução:",
-        to: "/tupi_antigo"
+        to: "/"
     }
 ]

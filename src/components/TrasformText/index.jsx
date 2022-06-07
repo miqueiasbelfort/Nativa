@@ -4,7 +4,9 @@ const TrasformText = ({stage, handleAssessText, handleOptionClick, handleClear, 
   return (
     <div className={styles.text_form_container}>
         <h1>Traduza para o {stage.to}:</h1>
-        <h2>{stage.ask}</h2>
+        
+        {stage.to == "Português" ? <h2 className={styles.title_in}>{stage.ask}</h2> : <h2>{stage.ask}</h2>}
+        
         <p className={styles.text_btn}>{txtChoice.join(" ")}</p>
         <div className={styles.btns_container}>
             {stage.options.map((option, index) => (
