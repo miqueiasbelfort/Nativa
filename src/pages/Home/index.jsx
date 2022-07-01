@@ -17,12 +17,6 @@ const Home = () => {
                         <div className={styles.card}>
                             <h2 className="macondo">{lang.name}</h2>
                             <p>Aprender</p>
-                           {
-                               lang.name == "Tupi Antigo" ?
-                               <img className={styles.img} src={Tupi_Antigo} alt="menina" />
-                               :
-                               <></>
-                           }
                         </div>
                     </Link>
                 ))

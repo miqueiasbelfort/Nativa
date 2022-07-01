@@ -22,3 +22,7 @@
     align-items: center;
     gap: 15px; 
 }
+.back{
+    margin: 10px 0;
+    color: #13122d;
+}

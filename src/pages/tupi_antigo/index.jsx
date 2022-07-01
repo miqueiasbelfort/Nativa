@@ -64,6 +64,7 @@ const Introducao = () => {
 
   return (
     <div className={styles.container}>
+        <Link className={styles.back} to="/">Voltar</Link>
         {
             tupi_atg.map(stage => (
                 <div key={stage.optionId}>
